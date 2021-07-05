@@ -1,0 +1,25 @@
+// Exercicio 25 -   Procurando uma string dentro da outra
+
+import 'dart:io';
+
+void main() {
+  print("Type the validator");
+
+  String validator = stdin.readLineSync();
+
+  print("Type your full name ...");
+
+  String fullName = stdin.readLineSync();
+
+  print("Your fullName is $fullName");
+
+  findName(value: fullName, validator: validator);
+}
+
+findName({String validator, String value}) {
+  (value.contains(
+    validator,
+  ))
+      ? print("Sucess - Contain $validator")
+      : print("Failure - Not contain $validator");
+}
