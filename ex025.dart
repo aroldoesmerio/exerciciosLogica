@@ -5,15 +5,15 @@ import 'dart:io';
 void main() {
   print("Type the validator");
 
-  String validator = stdin.readLineSync();
+  String validator = stdin.readLineSync().toLowerCase();
 
   print("Type your full name ...");
 
-  String fullName = stdin.readLineSync();
+  String fullName = stdin.readLineSync().toLowerCase();
 
   print("Your fullName is $fullName");
 
-  findName(value: fullName, validator: validator);
+  findName(value: fullName, validator: validator);  
 }
 
 findName({String validator, String value}) {
