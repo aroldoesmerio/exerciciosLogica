@@ -14,6 +14,6 @@ void main() {
   print('Por favor aguarde ... ');
 
   bool isTriangle = (v1 < v2 + v3) && (v2 < v1 + v3) && (v3 < v1 + v2);
-  Future.delayed(Duration(seconds: 10));
-  print(isTriangle ? 'Triangulo' : 'Não é  Triangulo');
+  Future.delayed(Duration(seconds: 3))
+      .then((value) => print(isTriangle ? 'Triangulo' : 'Não é  Triangulo'));
 }

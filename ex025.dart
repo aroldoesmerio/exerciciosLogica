@@ -13,7 +13,7 @@ void main() {
 
   print("Your fullName is $fullName");
 
-  findName(value: fullName, validator: validator);  
+  findName(value: fullName, validator: validator);
 }
 
 findName({String validator, String value}) {
