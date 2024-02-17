@@ -9,7 +9,7 @@ import 'dart:io';
 void main() {
   print('== SORTEIO DE ALUNOS == ');
 
-  List list = List();
+  List list = <String>[];
 
   for (int i = 1; i < 5; i++) {
     print('Digite o Aluno $i');
@@ -18,6 +18,6 @@ void main() {
   }
   var randomItem = (list.toList()..shuffle());
   print("============= O Aluno sorteado foi ===========");
-  print(randomItem);
+  print(randomItem[0]);
   print("===============================================");
 }

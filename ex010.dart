@@ -7,7 +7,7 @@ void main() {
   returnValue(walletValue);
 }
 
-double returnValue(double value) {
+void returnValue(double value) {
   double dollarValue = 5.38;
   print(
       'Com R\$$value você pode comprar US\$${(dollarValue * value).toStringAsFixed(2)} ');
