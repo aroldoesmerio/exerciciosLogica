@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main() {
   print('Quanto você tem na carteira ? R\$');
-  double walletValue = double.parse(stdin.readLineSync());
+  double walletValue = double.parse(stdin.readLineSync() ?? '');
 
   returnValue(walletValue);
 }

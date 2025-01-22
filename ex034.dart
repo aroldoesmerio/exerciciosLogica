@@ -8,7 +8,7 @@ import 'dart:io';
 
 void main() {
   print('Digite o salario ...');
-  double salary = double.parse(stdin.readLineSync());
+  double salary = double.parse(stdin.readLineSync() ?? '');
   finalSalary(salary);
 }
 

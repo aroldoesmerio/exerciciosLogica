@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main() {
   print('Uma distancia em metros .... ');
-  double path = double.parse(stdin.readLineSync());
+  double path = double.parse(stdin.readLineSync() ?? '');
   print('A medida de ${path.toStringAsPrecision(1)} corresponde a ....');
 
   print('---------------------------');

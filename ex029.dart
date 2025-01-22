@@ -9,7 +9,7 @@ import 'dart:io';
 
 void main() {
   print('Insira a velocidade do veículo');
-  int velocidade = int.parse(stdin.readLineSync());
+  int velocidade = int.parse(stdin.readLineSync() ?? '');
 
   if (velocidade <= 80) {
     print('Sem multas');

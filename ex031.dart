@@ -8,7 +8,7 @@ import 'dart:io';
 
 void main() {
   print('Digite a KM da viagem ...');
-  double distance = double.parse(stdin.readLineSync());
+  double distance = double.parse(stdin.readLineSync() ?? '');
   String info200km =
       'Seus KMs permaneceram em até 200KM, portanto o custo de sua viagem é de ...';
   String infoMais200Km =

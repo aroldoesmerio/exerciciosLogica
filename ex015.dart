@@ -8,14 +8,14 @@ import 'dart:io';
 
 void main() {
   print('Quantos KM foram percorridos?');
-  double kmUsage = double.parse(stdin.readLineSync());
+  double kmUsage = double.parse(stdin.readLineSync() ?? '');
   print('Quantos dias permaneceu alugado?');
-  int dayUsage = int.tryParse(stdin.readLineSync());
+  int dayUsage = int.parse(stdin.readLineSync() ?? '');
 
   calculate(km: kmUsage, day: dayUsage);
 }
 
-calculate({double km, int day}) {
+calculate({required double km, required int day}) {
   const double valuePerDay = 60;
   const double valuePerKm = 0.15;
 

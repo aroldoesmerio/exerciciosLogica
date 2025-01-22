@@ -4,7 +4,7 @@ import 'dart:io';
 
 void main() {
   print('Digite a cidade onde vc nasceu ?');
-  String city = stdin.readLineSync().trim().toUpperCase();
+  String city = stdin.readLineSync() ?? ''.trim().toUpperCase();
 
   print(city.startsWith('SANTO', 0));
 }

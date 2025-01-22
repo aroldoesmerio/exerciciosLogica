@@ -4,7 +4,7 @@ void main() {
   String name;
 
   print('Type your full name');
-  name = stdin.readLineSync().toLowerCase();
+  name = stdin.readLineSync() ?? ''.toLowerCase();
   print('Nice to meet you');
   print('Your full name is $name');
   List<String> listname = name.split(" ");

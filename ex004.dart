@@ -2,7 +2,7 @@ import 'dart:io';
 
 main(List<String> args) {
   print("Digite algo: ");
-  var text = stdin.readLineSync();
+  var text = stdin.readLineSync() ?? '';
 
   var tipagem = text.runtimeType;
 

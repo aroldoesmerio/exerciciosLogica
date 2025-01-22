@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main() {
   print('Digite um numero');
-  int num = int.parse(stdin.readLineSync());
+  int num = int.parse(stdin.readLineSync() ?? '');
   print('Analisando o numero ... ${num}');
 
   int unidade = (num / 1 % 10).toInt();

@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main() {
   print('Qual é o preço do produto');
-  double productValue = double.parse(stdin.readLineSync());
+  double productValue = double.parse(stdin.readLineSync() ?? '');
   double result = percentageCalcule(productValue);
 
   print('o Valor do desconto é R\$${result.toStringAsFixed(2)}');

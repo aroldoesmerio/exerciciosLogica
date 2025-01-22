@@ -1,5 +1,4 @@
-String dadosDoUsuario() {
-  return '''
+String dadosDoUsuario() => '''
     [
   {
     "id": 1,
@@ -256,4 +255,3 @@ String dadosDoUsuario() {
 
 
 ''';
-}

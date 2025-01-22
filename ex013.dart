@@ -9,7 +9,7 @@ import 'dart:io';
 void main() {
   const int _plus15 = 15;
   print('Qual é o salario do funcionário');
-  double valueSalary = double.parse(stdin.readLineSync());
+  double valueSalary = double.parse(stdin.readLineSync() ?? '');
 
   calculateSalary(valueSalary);
 

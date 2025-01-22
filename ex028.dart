@@ -8,7 +8,7 @@ void main() {
   List<int> sortNumbers = [0, 1, 2, 3, 4, 5];
 
   print('Vou pensar em um numero de 0 a 5. Tente adivinhar ....');
-  int choiceNumber = int.parse(stdin.readLineSync());
+  int choiceNumber = int.parse(stdin.readLineSync() ?? '');
 
   print("Aguarde o resultado ....");
   Future.delayed(Duration(seconds: 5), () {

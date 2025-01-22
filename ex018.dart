@@ -4,7 +4,7 @@ import 'dart:io';
 void main() {
   print('Digite o angulo');
 
-  double angulo = double.parse(stdin.readLineSync());
+  double angulo = double.parse(stdin.readLineSync() ?? '');
 
   double seno = asin(angulo);
   double coseno = acos(angulo);

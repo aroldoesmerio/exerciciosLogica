@@ -8,7 +8,7 @@ import 'dart:io';
 
 void main() {
   print('Digite um número inteiro');
-  int numInt = int.parse(stdin.readLineSync());
+  int numInt = int.parse(stdin.readLineSync() ?? '');
 
   String result = numInt % 2 == 0 ? 'Par' : 'Impar';
 

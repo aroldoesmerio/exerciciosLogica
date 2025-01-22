@@ -12,10 +12,10 @@ void main() {
   double altura;
 
   print('Digite a largura da parede .: ');
-  largura = double.parse(stdin.readLineSync());
+  largura = double.parse(stdin.readLineSync() ?? '');
 
   print('Digite a largura da parede .: ');
-  altura = double.parse(stdin.readLineSync());
+  altura = double.parse(stdin.readLineSync() ?? '');
 
   double returnValue = getArea(a: altura, l: largura);
   double returnPaintArea = paintArea(returnValue);
@@ -26,7 +26,7 @@ void main() {
       'Para pintar sua parede, você precisará de ${returnPaintArea.toStringAsPrecision(2)}');
 }
 
-double getArea({double l, double a}) {
+double getArea({required double l, required double a}) {
   return l * a;
 }
 

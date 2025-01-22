@@ -16,9 +16,9 @@ void main() {
 
   try {
     print('Digite o primeiro número');
-    num firstNumber = num.parse(stdin.readLineSync());
+    num firstNumber = num.parse(stdin.readLineSync() ?? '');
     print('Digite o segundo número');
-    num secondNumber = num.parse(stdin.readLineSync());
+    num secondNumber = num.parse(stdin.readLineSync() ?? '');
 
     print('Os números são primeiro = $firstNumber e segundo = $secondNumber');
 

@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main() {
   print('Digite seu nome completo: ');
-  String name = stdin.readLineSync();
+  String name = stdin.readLineSync() ?? '';
 
   print('Seu nome em maiúsculas é ${name.toUpperCase()}');
 

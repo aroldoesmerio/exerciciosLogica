@@ -8,10 +8,10 @@ void main() {
   double hipotenusa;
 
   print('Digite o cateto Oposto');
-  catetoOposto = double.parse(stdin.readLineSync());
+  catetoOposto = double.parse(stdin.readLineSync() ?? '');
 
   print('Digite o cateto adjacente');
-  catetoAdjacente = double.parse(stdin.readLineSync());
+  catetoAdjacente = double.parse(stdin.readLineSync() ?? '');
 
   hipotenusa = sqrt(pow(catetoOposto, 2) + pow(catetoAdjacente, 2));
 

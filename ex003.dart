@@ -7,10 +7,10 @@ main(List<String> args) {
   int b;
 
   print("Type the first number");
-  a = int.parse(stdin.readLineSync());
+  a = int.parse(stdin.readLineSync() ?? '');
 
   print("Type the second number");
-  b = int.parse(stdin.readLineSync());
+  b = int.parse(stdin.readLineSync() ?? '');
 
   int calculo = soma(
     primeiro: a,
@@ -20,4 +20,4 @@ main(List<String> args) {
   print("A soma dos números é $calculo");
 }
 
-int soma({int primeiro, int segundo}) => primeiro + segundo;
+int soma({required int primeiro, required int segundo}) => primeiro + segundo;

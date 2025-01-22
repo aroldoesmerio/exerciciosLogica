@@ -5,7 +5,7 @@ import 'dart:io';
 void main() {
   print('Digite um ano');
 
-  int ano = int.parse(stdin.readLineSync());
+  int ano = int.parse(stdin.readLineSync() ?? '');
 
   bool verifycent = verifyYearCent(ano);
   bool verifiy = verifyYear(ano);

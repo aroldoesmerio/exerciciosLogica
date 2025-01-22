@@ -13,7 +13,7 @@ void main() {
 
   for (int i = 1; i < 5; i++) {
     print('Digite o Aluno $i');
-    String student = stdin.readLineSync();
+    String student = stdin.readLineSync() ?? '';
     list.add(student);
   }
   var randomItem = (list.toList()..shuffle());

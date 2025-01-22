@@ -13,9 +13,9 @@ void main() {
   String searchText;
 
   print("Digite uma letra para procurar");
-  searchText = stdin.readLineSync().toLowerCase();
+  searchText = stdin.readLineSync() ?? ''.toLowerCase();
   print("Digite um texto");
-  myText = stdin.readLineSync().toLowerCase();
+  myText = stdin.readLineSync() ?? ''.toLowerCase();
 
   print('O texto digitado foi ${myText}');
   List str = myText.split(searchText);

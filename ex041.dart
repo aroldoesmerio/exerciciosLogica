@@ -13,29 +13,39 @@ de acordo com sua idade :
 import 'dart:io';
 
 void main() {
-  int calculoDaIdade;
-  try {
-    print('Digite o ano de nascimento do atleta com 4 digitos.....');
-    int anoDeNascimento = int.tryParse(stdin.readLineSync());
-    if (anoDeNascimento.toString().length == 4 && anoDeNascimento >= 1900) {
-      calculoDaIdade = DateTime.now().year - anoDeNascimento;
-    }
-  } catch (e) {}
+  print('Digite o ano de nascimento do atleta com 4 digitos.....');
+  String dataTyped = stdin.readLineSync() ?? '';
+  int calculoDaIdade = 0;
 
-  try {
-    if (calculoDaIdade <= 9) {
-      print('O atleta tem $calculoDaIdade anos e pertence a categoria MIRIM');
-    } else if (calculoDaIdade <= 14) {
+  if (dataTyped.isEmpty || dataTyped == '' || dataTyped.length != 4) {
+    print(
+        'Não identificamos os dados digitados, favor digitar novamente com 4 digitos. Exemplo 1994');
+  } else {
+    try {
+      int anoDeNascimento = int.parse(dataTyped);
+      calculoDaIdade = DateTime.now().year - anoDeNascimento;
+
+      if (calculoDaIdade >= 0 && calculoDaIdade <= 9) {
+        print('O atleta tem $calculoDaIdade anos e pertence a categoria MIRIM');
+      } else if (calculoDaIdade >= 0 && calculoDaIdade <= 14) {
+        print(
+            'O atleta tem $calculoDaIdade anos e pertence a categoria INFANTIL');
+      } else if (calculoDaIdade >= 0 && calculoDaIdade <= 19) {
+        print(
+            'O atleta tem $calculoDaIdade anos e pertence a categoria JUNIOR');
+      } else if (calculoDaIdade >= 0 && calculoDaIdade <= 25) {
+        print(
+            'O atleta tem $calculoDaIdade anos e pertence a categoria SENIOR');
+      } else if (calculoDaIdade >= 0 && calculoDaIdade <= 50) {
+        print(
+            'O atleta tem $calculoDaIdade anos e pertence a categoria MASTER');
+      } else {
+        print(
+            'Para este campeonato só serão aceitas vagas disponíveis para atletas até 50 anos. Obrigado por participar!');
+      }
+    } catch (e) {
       print(
-          'O atleta tem $calculoDaIdade anos e pertence a categoria INFANTIL');
-    } else if (calculoDaIdade <= 19) {
-      print('O atleta tem $calculoDaIdade anos e pertence a categoria JUNIOR');
-    } else if (calculoDaIdade <= 25) {
-      print('O atleta tem $calculoDaIdade anos e pertence a categoria SENIOR');
-    } else {
-      print('O atleta tem $calculoDaIdade anos e pertence a categoria MASTER');
+          'Não identificamos os dados digitados, favor digitar novamente com 4 digitos. Exemplo 1994');
     }
-  } catch (e) {
-    print('Você digitou um número inválido');
   }
 }

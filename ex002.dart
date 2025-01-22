@@ -5,7 +5,7 @@ main(List<String> args) {
   String name;
 
   print("Type your name ...");
-  name = stdin.readLineSync();
+  name = stdin.readLineSync() ?? '';
 
   print("Welcome $name");
 }

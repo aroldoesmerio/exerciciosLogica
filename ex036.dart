@@ -9,11 +9,11 @@ import 'dart:io';
 
 void main() {
   print('Digite o valor total do imovel.: ');
-  double propertieTotalValue = double.parse(stdin.readLineSync());
+  double propertieTotalValue = double.parse(stdin.readLineSync() ?? '');
   print('Digite em quantos anos você quer pagar.: ');
-  int yearsOfpayment = int.parse(stdin.readLineSync());
+  int yearsOfpayment = int.parse(stdin.readLineSync() ?? '');
   print('Digite seu salario.: ');
-  double salaryOfClient = double.parse(stdin.readLineSync());
+  double salaryOfClient = double.parse(stdin.readLineSync() ?? '');
 
   PropertieFinancy propertieFinancy = PropertieFinancy(
     propertieTotalValue: propertieTotalValue,
@@ -30,9 +30,9 @@ class PropertieFinancy {
   final int yearsOfpayment;
 
   PropertieFinancy({
-    this.propertieTotalValue,
-    this.salaryOfClient,
-    this.yearsOfpayment,
+    required this.propertieTotalValue,
+    required this.salaryOfClient,
+    required this.yearsOfpayment,
   });
 
   double get getPercentSalaryOfClient => _percentValue(this.salaryOfClient);

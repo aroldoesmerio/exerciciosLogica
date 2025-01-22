@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main() {
   print("Digite um numero");
-  int value = int.parse(stdin.readLineSync());
+  int value = int.parse(stdin.readLineSync() ?? '');
 
   int antecessor = value - 1;
   int sucessor = antecessor + 2;

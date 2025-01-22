@@ -10,7 +10,7 @@ import 'dart:io';
 
 void main() {
   print('Informe a temperatura em C .: ');
-  double temperatura = double.parse(stdin.readLineSync());
+  double temperatura = double.parse(stdin.readLineSync() ?? '');
 
   Temperatura minhaTemperatura = Temperatura(temperatura: temperatura);
 
@@ -21,7 +21,7 @@ void main() {
 class Temperatura {
   double temperatura;
   Temperatura({
-    this.temperatura,
+    required this.temperatura,
   });
 
   double conversor() => ((this.temperatura * 9 / 5) + 32);

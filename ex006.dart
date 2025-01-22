@@ -3,7 +3,7 @@ import 'dart:math' as math;
 
 void main() {
   print("Digite um numero: ");
-  double number = double.parse(stdin.readLineSync());
+  double number = double.parse(stdin.readLineSync() ?? '');
 
   double numberDouble = (number * 2);
   print("O dobro de $number é ${numberDouble.toStringAsPrecision(2)}");

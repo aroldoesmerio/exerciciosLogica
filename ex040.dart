@@ -6,7 +6,6 @@ mostrando uma mensagem no final, de acordo com a média atingida.
 - Média 7.0 ou superior = Aprovado
 */
 
-import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -18,9 +17,8 @@ void main(List<String> args) {
   String nomeAluno = '';
   bool lista = false;
   bool sair = false;
-  bool tentarNovamente = false;
-  List<AlunoModel> meusAlunos;
-  meusAlunos = fetchListaDeAlunos();
+  List<AlunoModel> meusAlunos = fetchListaDeAlunos();
+
   print('&' * title.length);
   print(title);
   print('&' * title.length);
@@ -30,12 +28,12 @@ void main(List<String> args) {
     print('Digite 1 - Para pesquisar nome do aluno');
     print('Digite 2 - Para listar a situação geral da turma');
     print('Digite 3 - Para sair');
-    int myMenu = int.tryParse(stdin.readLineSync());
+    int myMenu = int.parse(stdin.readLineSync() ?? '');
 
     switch (myMenu) {
       case 1:
         print('Digite o nome do aluno');
-        nomeAluno = stdin.readLineSync();
+        nomeAluno = stdin.readLineSync() ?? '';
         break;
       case 2:
         print('Aguarde ... ');
@@ -84,7 +82,7 @@ void main(List<String> args) {
   }
 }
 
-List<dynamic> fetchListaDeAlunos() {
+List<AlunoModel> fetchListaDeAlunos() {
   var response = dadosDoUsuario();
 
   return (json.decode(response) as List)
@@ -97,7 +95,7 @@ class AlunoEntity {
   String nome;
   int nota;
 
-  AlunoEntity({this.id, this.nome, this.nota});
+  AlunoEntity({required this.id, required this.nome, required this.nota});
 
   Map<String, dynamic> toJson() => <String, dynamic>{
         'id': id,
@@ -107,7 +105,7 @@ class AlunoEntity {
 }
 
 class AlunoModel extends AlunoEntity {
-  AlunoModel({int id, String nome, int nota})
+  AlunoModel({required int id, required String nome, required int nota})
       : super(id: id, nome: nome, nota: nota);
 
   factory AlunoModel.fromJson(Map<dynamic, dynamic> json) => AlunoModel(

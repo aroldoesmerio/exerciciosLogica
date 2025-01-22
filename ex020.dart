@@ -8,7 +8,7 @@ void main() {
 
   for (int i = 1; i < 5; i++) {
     print('Digite o nome do aluno $i');
-    String students = stdin.readLineSync();
+    String students = stdin.readLineSync() ?? '';
     studentsList.add(students);
   }
 
